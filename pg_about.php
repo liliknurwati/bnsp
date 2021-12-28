@@ -51,6 +51,7 @@
                 <div class="list-group list-group-flush">
                     <font class="text-center"><br><b>Menu</b><br><b>---------</b></font>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_arsip.php"><i class="fa fa-star"> </i> <b>Arsip</b></a>
+                    <a class="list-group-item-action list-group-item-light p-3" href="index.php"><i class="fa fa-star"> </i> <b>Data Arsip</b></a>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_about.php"><i class="fa fa-info-circle"></i> <b>About</b></a>
                 </div>
             </div>
@@ -74,7 +75,7 @@
                                     Aplikasi ini dibuat oleh:<br>
                                     Nama: Lilik Nurwati <br>
                                     NIM : 1931710097 <br>
-                                    Tanggal : 23 Oktober 2021
+                                    
                                 </div>   
                             </td>
                         </tr>

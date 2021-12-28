@@ -39,6 +39,7 @@
                 <div class="list-group list-group-flush">
                     <font class="text-center"><br><b>Menu</b><br><b>---------</b></font>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_arsip.php"><i class="fa fa-star"> </i> <b>Arsip</b></a>
+                    <a class="list-group-item-action list-group-item-light p-3" href="index.php"><i class="fa fa-star"> </i> <b>Data Arsip</b></a>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_about.php"><i class="fa fa-info-circle"></i> <b>About</b></a>
                 </div>
             </div>
@@ -49,8 +50,8 @@
                 <div class="container-fluid">
                     <div class="box">
                         <h3>Arsip Surat</h3>
-                        Berikut ini adalah surat-surat yang telah terbit dan diarsipkan. <br>
-                        Klik "Lihat" pada kolom aksi untuk menampilkan surat.
+                        Berikut ini adalah data-data surat yang telah diarsipkan. <br>
+                        Klik "Lihat" pada kolom aksi untuk menampilkan detail surat.
                         <br><br>
                     </div>
 
@@ -64,6 +65,7 @@
                                 <th>Nomor Surat</th>
                                 <th>Kategori</th>
                                 <th>Judul</th>
+                                <th>Proses Surat</th>
                                 <th>Waktu Pengarsipan</th>
                                 <th>Aksi</th>
                             </tr>
@@ -77,10 +79,10 @@
                                 <td><?php echo $row['nomorSurat']; ?></td>
                                 <td><?php echo $row['kategori']; ?></td>
                                 <td><?php echo $row['judul']; ?></td>
+                                <td><?php echo $row['proses']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-danger">Hapus</button>
-                                    <a href="download_file.php?file=<?= $row['file']; ?>"><button class="btn btn-warning">Unduh</button></a>
                                     <a href="pg_file.php?id=<?php echo $row['idSurat']; ?>"><button class="btn btn-primary">Lihat >></button></a>
                                 <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">

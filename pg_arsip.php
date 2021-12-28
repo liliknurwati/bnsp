@@ -35,6 +35,7 @@
                 <div class="list-group list-group-flush">
                     <font class="text-center"><br><b>Menu</b><br><b>---------</b></font>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_arsip.php"><i class="fa fa-star"> </i> <b>Arsip</b></a>
+                    <a class="list-group-item-action list-group-item-light p-3" href="index.php"><i class="fa fa-star"> </i> <b>Data Arsip</b></a>
                     <a class="list-group-item-action list-group-item-light p-3" href="pg_about.php"><i class="fa fa-info-circle"></i> <b>About</b></a>
                 </div>
             </div>
@@ -46,11 +47,11 @@
     
                     <div class="box_form">
                         <h1>Arsip Surat >> Unggah</h1>
-                        Unggah surat yang telah terbit pada form ini untuk diarsipkan <br>
+                        Catat surat yang telah diterima dan prosesnya<br>
                         Catatan: <br>
-                        - Gunakan File berformat PDF
+                        
                         <br><br><br>
-                        <form method="post" action="insert_arsip.php" enctype="multipart/form-data">
+                        <form method="post" action="insert_arsip.php">
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label"><b>Nomor Surat</b></label>
                             <div class="col-sm-3">
@@ -75,9 +76,25 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label class="col-sm-2 col-form-label"><b>File Surat (PDF)</b></label>
+                            <label class="col-sm-2 col-form-label"><b>Pengirim</b></label>
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control" name="pengirim" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label"><b>Tanggal Pelaksanaan</b></label>
                             <div class="col-sm-3">
-                              <input type="file" class="form-control" name="file" required>
+                              <input type="date" class="form-control" name="tanggal" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label"><b>Proses Surat</b></label>
+                            <div class="col-sm-4">
+                              <select class="form-select" aria-label="Default select example" name="lanjutan" required>
+                                  <option value="Diterima" selected>Diterima</option>
+                                  <option value="Diproses">Diproses</option>
+                                  <option value="Ditolak">Ditolak</option>
+                              </select>
                             </div>
                         </div>
 
@@ -94,31 +111,7 @@
                         </div>
                         </form>
                         <br>
-                        <?php
-                            if(isset($_GET['data']))
-                            {
-                                $data=$_GET['data'];
-                            }
-                            else
-                            {
-                                $data="";
-                            }
-
-                            $pesan="";
-                            if($data=="success"){
-                                $pesan="<div class='alert alert-success'>
-                                          Data berhasil disimpan
-                                        </div>";
-                            }
-                            if($data=="file_salah"){
-                                $pesan="<div class='alert alert-danger'>
-                                          Format File Salah, File harus PDF!.
-                                        </div>";
-                            }
-                        ?>
-                        <?php
-                            echo $pesan;
-                        ?>    
+                        
                     </div>
                 </div>
             </div>

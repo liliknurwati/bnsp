@@ -1,20 +1,13 @@
 <?php 
 	include 'koneksi.php';
 	$id = $_POST['id'];
+	$nomor = $_POST['nomor'];
+	$kategori = $_POST['kategori'];
 	$judul = $_POST['judul'];
+	$proses = $_POST['lanjutan'];
+	$tgl = $_POST['tanggal'];
+	$pengirim = $_POST['pengirim'];
 	
-	$format = array('pdf', 'pdf');
-	$nama = $_FILES['file']['name'];
-	$x = explode('.', $nama);
-	$ekstensi = strtolower(end($x));
-	$file_tmp = $_FILES['file']['tmp_name'];
-
-	if(in_array($ekstensi, $format) === true){
-		move_uploaded_file($file_tmp, "file/$nama");
-		$query = mysqli_query($db, "UPDATE surat SET judul = '$judul', file = '$nama' WHERE idSurat = $id");
-		header("Location:index.php?data=success");
-	}
-	else{
-		header("Location: index.php?data=file_salah");
-	}
+		$query = mysqli_query($db, "UPDATE surat SET nomorSurat = '$nomor', kategori = '$kategori', judul = '$judul', pengirim = '$pengirim', proses ='$proses', tanggal = '$tgl'  WHERE idSurat = $id");
+		header("Location: index.php?data=success");
 ?>
